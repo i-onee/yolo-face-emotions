@@ -10,7 +10,7 @@ class Missing_Label:
 		self.__path = "data"
 		self.__option = {"1": "Train", "2": "Test", "3": "Val", "0": "Back"}
 
-	def run(self, callback = None):
+	def __call__(self, callback = None):
 		spinner(title = "Loading", delay = 5, clear = True)
 		menu("Check Missing Labels", item = self.__option)
 

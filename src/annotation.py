@@ -8,7 +8,7 @@ class Annotation:
 		self.__option = {"1": "Run", "0": "Back"}
 		self.__command = "cd C:/Users/ione/Documents/Programming/MakeSense && python -m webbrowser -t http://localhost:3000 && npm run dev"
 
-	def run(self, callback = None):
+	def __call__(self, callback = None):
 		spinner(title = "Loading", delay = 5, clear = True)
 		menu(title = "Annotation Tool", item = self.__option)
 
@@ -17,7 +17,7 @@ class Annotation:
 
 			if option != "0":
 				spinner(title = "[cyan]MakeSense.ai [white]: [blue]http://localhost:3000", clear = True, callback = self.__handle_makesense)
-				self.run(callback)
+				self(callback)
 				break
 			
 			if option == "0" and callback is not None:
