@@ -6,7 +6,7 @@ import subprocess
 class Annotation:
 	def __init__(self):
 		self.__option = {"1": "Run", "0": "Back"}
-		self.__command = "cd C:/Users/ione/Documents/Programming/MakeSense && python -m webbrowser -t http://localhost:3000 && npm run dev"
+		self.__command = "cd makesense && python -m webbrowser -t http://localhost:3000 && npm start"
 
 	def __call__(self, callback = None):
 		spinner(title = "Loading", delay = 5, clear = True)
