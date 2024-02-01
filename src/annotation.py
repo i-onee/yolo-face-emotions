@@ -5,8 +5,9 @@ import subprocess
 
 class Annotation:
 	def __init__(self):
+		self.__url = "http://localhost:3000"
 		self.__option = {"1": "Run", "0": "Back"}
-		self.__command = "cd makesense && python -m webbrowser -t http://localhost:3000 && npm start"
+		self.__command = f"cd makesense && py -m webbrowser -t {self.__url} && npm start"
 
 	def __call__(self, callback = None):
 		spinner(title = "Loading", delay = 5, clear = True)
@@ -16,7 +17,7 @@ class Annotation:
 			option = prompt(title = "Option", options = self.__option)
 
 			if option != "0":
-				spinner(title = "[cyan]MakeSense.ai [white]: [blue]http://localhost:3000", clear = True, callback = self.__handle_makesense)
+				spinner(title = f"[cyan]MakeSense.ai [white]: [blue]{self.__url}", clear = True, callback = self.__handle_makesense)
 				self(callback)
 				break
 			
