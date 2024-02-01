@@ -22,7 +22,7 @@ class Missing_Label:
 				f_name = self.__m_list({
 					"i": self.__f_list(path_selected, "images"),
 					"l": self.__f_list(path_selected, "labels")
-				})
+					})
 
 				if not f_name: console.print("👌[bold green] CLEAN!")
 				else:
