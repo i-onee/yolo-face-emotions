@@ -1,7 +1,7 @@
 # import required package 🚀
 from supervision import Detections, BoxAnnotator, ColorPalette
 
-def bb_plot(results, frame):
+def plotter(results, frame):
 	# custom colors
 	colors = ["#3b82f6", "#10b981", "#f43f5e", "#f59e0b"]
 
