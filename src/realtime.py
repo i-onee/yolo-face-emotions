@@ -3,7 +3,7 @@ from cv2 import VideoCapture, CAP_PROP_FRAME_WIDTH, CAP_PROP_FRAME_HEIGHT, imsho
 from signal import signal, SIGINT
 from ultralytics import YOLO
 
-from .utils import menu, prompt, spinner, bb_plot
+from .utils import menu, prompt, spinner, plotter
 from rich.console import Console
 from torch import cuda
 
@@ -49,7 +49,7 @@ class Realtime:
 				# get frame, predict & plot bounding box
 				_, frame = capture.read()
 				predict_frame = self.__model.predict(frame)
-				plotted_frame = bb_plot(predict_frame, frame)
+				plotted_frame = plotter(predict_frame, frame)
 
 				# show frame after plotting
 				imshow("YOLO Face Emotions (Realtime Predictor)", plotted_frame)
