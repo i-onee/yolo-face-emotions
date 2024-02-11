@@ -1,5 +1,4 @@
-from .missing_label import Missing_Label
-from .annotation import Annotation
-from .realtime import Realtime
+from .missing_labels import MissingLabels
+from .annotator import Annotator
 
-__all__ = "Annotation", "Missing_Label", "Realtime"
+__all__ = "Annotator", "MissingLabels"
