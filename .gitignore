@@ -4,6 +4,7 @@ main.py
 # Dataset
 data/
 makesense/
+runs/
 
 # Models
 models/
