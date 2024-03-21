@@ -1,5 +1,5 @@
 # import required package 🚀
-from utils import plotters
+from .utils import plotters
 from ultralytics import YOLO
 from signal import SIGINT, signal
 from cv2 import (
