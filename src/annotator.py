@@ -11,7 +11,7 @@ class Annotator:
             f"cd makesense && py -m webbrowser -t {self.__url} && npm start"
         )
 
-        self.__model = YOLO("models/best_2.pt")
+        self.__model = YOLO("models/results/best_2.pt")
         self.__model.fuse()
 
     def makesense(self) -> None:
