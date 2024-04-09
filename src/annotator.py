@@ -5,7 +5,7 @@ from subprocess import DEVNULL, Popen
 
 
 class Annotator:
-    def __init__(self) -> None:
+    def __init__(self):
         self.__url = "http://localhost:3000"
         self.__command = (
             f"cd makesense && py -m webbrowser -t {self.__url} && npm start"
@@ -14,7 +14,7 @@ class Annotator:
         self.__model = YOLO("models/results/best_2.pt")
         self.__model.fuse()
 
-    def makesense(self) -> None:
+    def makesense(self):
         process = Popen(args=self.__command, shell=True, stdout=DEVNULL, stderr=DEVNULL)
         try:
             spinner(

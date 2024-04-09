@@ -14,7 +14,7 @@ from cv2 import (
 
 
 class Predictor:
-    def __init__(self, weight: str, conf: float = 0.25):
+    def __init__(self, weight, conf=0.25):
         # setup confidence treshold
         self.__conf = conf
 
@@ -22,7 +22,7 @@ class Predictor:
         self.__model = YOLO(weight)
         self.__model.fuse()
 
-    def image(self, source: str):
+    def image(self, source):
         # load image from path
         image = imread(source)
 
@@ -35,7 +35,7 @@ class Predictor:
         waitKey(0)
         destroyAllWindows()
 
-    def video_or_cam(self, source: str | int):
+    def video_cam(self, source):
         # load video from path or camera
         capture = VideoCapture(source)
 
@@ -43,7 +43,7 @@ class Predictor:
         capture.set(CAP_PROP_FRAME_WIDTH, 1280)
         capture.set(CAP_PROP_FRAME_HEIGHT, 720)
 
-        # handling signals
+        # handling signals for keyboard interupt
         signal(SIGINT, lambda s, f: (capture.release(), destroyAllWindows()))
 
         while capture.isOpened():

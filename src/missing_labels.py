@@ -6,10 +6,10 @@ print = Console().print
 
 
 class MissingLabels:
-    def __init__(self) -> None:
+    def __init__(self):
         pass
 
-    def __call__(self, target: str) -> None:
+    def __call__(self, target: str):
         missing_labels = self.__m_list(
             {
                 "images": file_lister(f"{target}/images"),
@@ -25,7 +25,7 @@ class MissingLabels:
         else:
             print("👌[bold green] CLEAN!")
 
-    def __m_list(self, files: dict):
+    def __m_list(self, files):
         return [
             image
             for image in files["images"]
