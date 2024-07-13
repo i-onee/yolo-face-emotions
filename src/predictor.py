@@ -1,7 +1,7 @@
 # import required package 🚀
+from signal import SIGINT, signal
 from .utils import plotters
 from ultralytics import YOLO
-from signal import SIGINT, signal
 from cv2 import (
     CAP_PROP_FRAME_WIDTH,
     CAP_PROP_FRAME_HEIGHT,

@@ -12,16 +12,16 @@ def plotters(results, frame):
     # setup supervision for visualization
     detections = Detections(
         class_id=results[0].boxes.cls.cpu().numpy().astype(int),
-        confidence=results[0].boxes.conf.cpu().numpy(),
         xyxy=results[0].boxes.xyxy.cpu().numpy(),
+        confidence=results[0].boxes.conf.cpu().numpy(),
     )
 
     # setup annotator
     annotator = BoxAnnotator(
         color=ColorPalette.from_hex(colors),
-        text_thickness=1,
         text_scale=0.5,
         thickness=2,
+        text_thickness=1,
     )
 
     # format labels to show in frame

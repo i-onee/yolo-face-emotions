@@ -1,7 +1,7 @@
 # import required package 🚀
 from rich.console import Console
-from subprocess import run
 from time import sleep
+from subprocess import run
 
 
 status = Console().status

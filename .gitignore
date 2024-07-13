@@ -1,6 +1,3 @@
-# Executor
-main.py
-
 # Dataset
 data/
 makesense/
@@ -31,6 +28,7 @@ lib64/
 parts/
 sdist/
 var/
+.vscode/
 wheels/
 share/python-wheels/
 *.egg-info/

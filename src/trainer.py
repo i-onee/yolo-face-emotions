@@ -1,6 +1,6 @@
 # import required packages 🚀
-import comet_ml
 from ultralytics import YOLO
+import comet_ml
 
 from dotenv import load_dotenv
 from os import environ, getenv
@@ -12,8 +12,8 @@ class Trainer:
         load_dotenv()
 
         # initialize comet_ml for offline logging
-        environ["COMET_MODE"] = "offline"
         environ["COMET_EVAL_LOG_CONFUSION_MATRIX"] = "false"
+        environ["COMET_MODE"] = "offline"
         comet_ml.OfflineExperiment(
             project_name=getenv("PROJECT_NAME"),
             workspace=getenv("WORKSPACE"),
@@ -29,9 +29,9 @@ class Trainer:
         # setup parameters and train
         self.__model.train(
             optimizer="Adam",
-            epochs=150,
-            device=0,
-            batch=16,
             amp=False,
+            batch=16,
+            device=0,
             data=data,
+            epochs=150,
         )
