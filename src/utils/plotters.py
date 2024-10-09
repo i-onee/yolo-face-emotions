@@ -26,7 +26,7 @@ def plotters(results, frame):
 
     # format labels to show in frame
     labels = [
-        f"{CLASS_NAME[id]} {int(conf * 100)}%" for _, _, conf, id, _, _ in detections
+        f"{CLASS_NAME[id]} {int(conf * 100)}%" for _, _, conf, id, _, _ in detections  # type: ignore
     ]
 
     # annotate frame with labels & bbox
